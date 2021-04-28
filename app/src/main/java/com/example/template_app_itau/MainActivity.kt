@@ -2,6 +2,7 @@ package com.example.template_app_itau
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         iniciaView()
+        carregaAvatar()
         setItemsLista()
     }
 
@@ -20,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         rvList = findViewById(R.id.rv_list)
         rvList.adapter = adapter
         rvList.layoutManager = GridLayoutManager(this, 2)
+    }
+
+    fun carregaAvatar(){
+        findViewById<ImageView>(R.id.avatar).apply {
+            setImageResource(R.drawable.ic_baseline_face_24)
+        }
     }
 
     private fun setItemsLista(){
